@@ -23,6 +23,6 @@ function render(result) {
   // // 5.0 系统统计
   TOOLS.systemHour(myBigData.loginTypeCount.data)
   // 6.0 访问统计
-  TOOLS.visitStatics(myBigData.clickCount.data)
+  // TOOLS.visitStatics(myBigData.clickCount.data)
 }
 

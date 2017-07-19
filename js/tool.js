@@ -651,102 +651,101 @@ TOOLS.renderOthers = function (data) {
   $('#hourOthers').html(formatNum(data[0]['count']))
 }
 // 6.0 访问统计
-TOOLS.visitStatics = function (data) {
-  var newData = TOOLS.formatVisitData(data)
+// TOOLS.visitStatics = function (data) {
+//   var newData = TOOLS.formatVisitData(data)
 
-  var builderJson = {
-    "all": 60000,
-    "charts": newData
-  };
+//   var max = TOOLS.sortData(data,'count')[0]['count']
+//   var builderJson = {
+//     "all": Math.ceil(max/10000)*10000,
+//     "charts": newData
+//   };
+//   console.log(max)
+//   var waterMarkText = 'ECHARTS';
 
-  var waterMarkText = 'ECHARTS';
-
-  option = {
-      // backgroundColor: {
-      //     type: 'pattern',
-      //     // image: canvas,
-      //     repeat: 'repeat'
-      // },
-      tooltip: {},
-      // title: [{
-      //     text: '',
-      //     // subtext: '总计 ' + builderJson.all,
-      //     x: '25%',
-      //     textAlign: 'center'
-      // }],
-      grid: [{
-          top: 50,
-          width: '90%',
-          bottom: 50,
-          left: '0',
-          containLabel: true
-      }],
-      xAxis: [{
-          type: 'value',
-          max: builderJson.all,
-          splitLine: {
-              show: false
-          }
-      }],
-      yAxis: [{
-          type: 'category',
-          data: Object.keys(builderJson.charts),
-          nameLocation:'start',
-          inverse:true,
-          axisLabel: {
-            show: true,
-            interval: 0,
-            rotate: 0,
-            formatter:function (data) {
-              console.log(data)
-              return data
-            }
-          },
-          splitLine: {
-              show: false
-          }
-      }],
-      series: [{
-          type: 'bar',
-          stack: 'chart',
-          z: 3,
-          label: {
-              normal: {
-                  textStyle:{
-                    color: '#222',
-                  },
-                  position: 'right',
-                  show: true
-              }
-          },
-          itemStyle: {
-            normal:{
-              color: '#0059aa'
-            }  
-          },
-          data: Object.keys(builderJson.charts).map(function (key) {
-              return builderJson.charts[key];
-          })
-      }]
-  }
-    // 基于准备好的dom，初始化echarts实例
-  var Chart = echarts.init(document.getElementById('visitChart'));
-  // 使用刚指定的配置项和数据显示图表。
-  Chart.setOption(option);   
-}
-TOOLS.formatVisitData = function (data) {
-  console.log(data)
-  var obj ={}
-  for (var i = 0; i < data.length; i++) {
-    var key = data[i]['eventname']
-    var value = data[i]['count']
-    if(key){
-      obj[key] = value
-    }
-  }
-  console.log(obj)
-  return obj
-}
+//   option = {
+//       tooltip: {
+//         trigger:'axis',
+//         axisPointer: {
+//             type: 'shadow'
+//         },
+//       },
+//       grid: [{
+//           top: 20,
+//           width: '110%',
+//           bottom: 50,
+//           left: '-24%',
+//           containLabel: true
+//       }],
+//       xAxis: [{
+//           type: 'value',
+//           max: builderJson.all,
+//           splitLine: {
+//               show: false
+//           }
+//       }],
+//       yAxis: [{
+//           type: 'category',
+//           data: Object.keys(builderJson.charts),
+//           nameLocation:'start',
+//           inverse:true,
+//           axisLabel: {
+//             show: false,
+//             interval: 0,
+//             rotate: 0
+//           },
+//           splitLine: {
+//               show: false
+//           },
+//           axisTick:{
+//             show:false
+//           }
+//       }],
+//       series: [{
+//           type: 'bar',
+//           stack: 'chart',
+//           z: 3,
+//           label: {
+//               normal: {
+//                   textStyle:{
+//                     color: '#222',
+//                   },
+//                   position: 'right',
+//                   show: true
+//               }
+//           },
+//          itemStyle: {
+//                 normal:{
+//                   color: function (param) {
+//                     if(parseInt(param.value) === parseInt(max)){
+//                       return '#ff7e00'
+//                     }
+//                     return '#0059aa'
+//                   },
+//                 }
+//           },
+//           data: Object.keys(builderJson.charts).map(function (key) {
+//               return builderJson.charts[key];
+//           })
+//       }]
+//   }
+//     // 基于准备好的dom，初始化echarts实例
+//   var Chart = echarts.init(document.getElementById('visitChart'));
+//   // 使用刚指定的配置项和数据显示图表。
+//   Chart.setOption(option);   
+// }
+// TOOLS.formatVisitData = function (data) {
+//   console.log(data)
+//   var obj ={}
+//   for (var i = 0; i < data.length; i++) {
+//     var key = data[i]['eventname']
+//     var value = data[i]['count']
+//     if(key){
+//       obj[key] = value
+//     }
+//   }
+//   console.log(obj)
+//   return obj
+// }
 
 // function   formatNum(num)
 // {   
