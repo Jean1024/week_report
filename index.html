@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>“中国气象”周报统计</title>
+  <link rel="icon" href="img/littlelogo.png">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/rem.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <!-- 头部导航 -->
+    <div class="top_tip">
+      <div class="one clearfix">
+        <span class="left fl">
+          启动次数
+        </span>
+        <span class="right fr">
+          
+        </span>
+      </div>
+      <div class="thisWeek">
+        <p>过去7天“中国气象”启动总次数</p>
+        <h2></h2>
+      </div>
+    </div>
+    <!-- 登录次数图表展示 -->
+    <div class="echart_one">
+      <div class="chart_show" id="chartShow">
+      </div>
+    </div>
+    <!-- 地域分布 -->
+    <div class="geo">
+      <div class="top_tip">
+        <div class="one clearfix">
+          <span class="left fl">
+            地域分布
+          </span>
+          <span class="right fr">
+            
+          </span>
+        </div>
+        <div class="thisWeek">
+          <p>过去7天登录次数最多的省份是
+            <span class="ColorBlue" id="place_most"></span></p>
+        </div>
+      </div>
+      <div class="geo_dist" id="geoDist">
+      </div>
+      <ul class="bottom" id="cityMost">
+      </ul>
+    </div>
+    <!-- 访问页面 -->
+    <div class="visit_page">
+      <div class="top_tip">
+        <div class="one clearfix">
+          <span class="left fl">
+            访问模块
+          </span>
+          <span class="right fr">
+            
+          </span>
+        </div>
+        <div class="thisWeek">
+          <p>过去7天用户使用次数最高的模块是 <span class="ColorBlue" id="pageMost"></span></p>
+        </div>
+      </div>
+      <ul class="container" id="podium">
+        <li><div class="title"></div><div class="box"><span>2</span></div></li>
+        <li><div class="title"></div><div class="box"><b></b></div></li>
+        <li><div class="title"></div><div class="box"><span>3</span></div></li>
+      </ul>
+<div>
+        <ul class="bottom_tip clearfix">
+        <li> <div class="tip"></div><div class="content"><img src="" alt=""><span></span></div></li>
+        <li> <div class="tip"></div><div class="content"><img src="" alt=""><span></span></div></li>
+        <li> <div class="tip"></div><div class="content"><img src="" alt=""><span></span></div></li>
+      </ul>
+</div>
+    </div>
+    <!-- 4.0 使用时段 -->
+    <div class="use_time">
+      <div class="top_tip">
+        <div class="one clearfix">
+          <span class="left fl">
+            登录时段
+          </span>
+          <span class="time fr" id="timeRange">
+            
+          </span>
+        </div>
+        <div class="thisWeek">
+          <p>过去24小时用户登录量最高的时段为<span class="ColorBlue" id="hourMost"></span>时</p>
+        </div>
+      </div>
+      <div id="useTime"></div>
+    </div>
+    <!-- 5.0 设备统计 -->
+    <div class="use_device">
+      <div class="top_tip">
+        <div class="one clearfix">
+          <span class="left fl">
+            设备统计
+          </span>
+          <span class="right fr">
+          </span>
+        </div>
+        <div class="thisWeek">
+          <p>过去7天<span style="color:#ff7e00;font-weight: 700;">iOS</span>系统使用次数<span class="ColorBlue" id="hourIOS"></span>次,<span style="color:#ff7e00;font-weight: 700;">Android</span>系统使用次数<span  class="ColorBlue" id="hourOthers"></span>次</p>
+        </div>
+      </div>
+      <div id="system">
+        
+      </div>
+    </div>
+    <!-- 6.0 访问统计 -->
+    <div class="visit_statistics" style="background: #fff;">
+      <div class="top_tip">
+        <div class="one clearfix">
+          <span class="left fl">
+            访问统计
+          </span>
+          <span class="right fr">
+          </span>
+        </div>
+        <div class="thisWeek">
+          <p>访问统计</p>
+        </div>
+      </div>
+      <div class="visit_chart" id="visitChart" ></div>
+    </div>
+  </div>
+</body>
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/ecStat.js"></script>
+<script src="js/china.js"></script>
+<script src="js/countUp.js"></script>
+<script src="js/tool.js?1213"></script>
+<script src="js/index.js"></script>

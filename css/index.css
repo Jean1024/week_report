@@ -1,0 +1,406 @@
+@charset "utf-8";
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+  background: #f6f6f6;
+  color: #999;
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: -apple-system, "SF UI Text", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Zen Hei", sans-serif;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+  text-align: inherit;
+}
+/* 去除默认边框 */
+fieldset,
+img {
+  border: none;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+  display: block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+  border: none;
+  font-variant: normal;
+}
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,
+ul {
+  list-style: none;
+}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,
+th {
+  text-align: left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:before,
+q:after {
+  content: '';
+}
+/* 统一上标和下标 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+  text-decoration: none;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,
+a {
+  text-decoration: none;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,
+*:focus {
+  outline: none;
+}
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+.clearfix {
+  zoom: 1;
+  /* for ie6 & ie7 */
+}
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+/* 设置浮动，减少浮动带来的 bug */
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+html,
+body {
+  min-height: 100%;
+}
+.layout {
+  height: 100%;
+}
+.top_tip {
+  background: #fff;
+}
+.top_tip .one {
+  padding: 1.0rem;
+}
+.top_tip .one .left {
+  color: #666;
+  font-size: 1.0rem;
+}
+.top_tip .one .right {
+  font-size: 0.8rem;
+}
+.top_tip .one .time {
+  font-size: 0.8rem;
+}
+.top_tip .thisWeek p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+.top_tip .thisWeek h2 {
+  text-align: center;
+  font-size: 1.833333rem;
+  line-height: 2.866667rem;
+  color: #333;
+}
+.echart_one {
+  background: #fff;
+}
+.chart_show {
+  height: 12.266667rem;
+  background: #fff;
+}
+.geo_dist {
+  height: 18.133333rem;
+  background: #fff;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.geo {
+  margin-top: 0.733333rem;
+  background: #fff;
+  position: relative;
+}
+.geo .bottom {
+  height: 1.333333rem;
+  margin-left: 3.6rem;
+  line-height: 1.333333rem;
+  font-size: 0.8rem;
+  color: #222;
+  position: absolute;
+  bottom: 1rem;
+}
+.geo .bottom li {
+  float: left;
+  width: 7rem;
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  position: relative;
+}
+.geo .bottom li span {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #ffffff no-repeat center / contain;
+  position: absolute;
+  left: -0.333333rem;
+  top: 50%;
+  transform: translate(-110%, -50%);
+}
+.visit_page {
+  height: 19.8rem;
+  margin-top: 0.733333rem;
+  background: #fff;
+}
+.visit_page .container {
+  width: 11.866667rem;
+  height: 8.666667rem;
+  margin: 0 auto;
+  padding: 0 0.333333rem;
+  border-bottom: 0.2rem solid #666;
+}
+.visit_page .container li {
+  width: 33.333333333%;
+  float: left;
+  height: 100%;
+  position: relative;
+}
+.visit_page .container li .box {
+  width: 96%;
+  background: #999;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 2%;
+}
+.visit_page .container li .box span {
+  height: 1.333333rem;
+  width: 1.333333rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.33333rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.visit_page .container li .box b {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.266667rem;
+  height: 2.266667rem;
+  background: url('../img/tj_pic_one.png') no-repeat center / contain;
+}
+.visit_page .container li .title {
+  text-align: center;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  color: #222;
+}
+.visit_page .container li:nth-child(1) .box {
+  height: 2.833333rem;
+}
+.visit_page .container li:nth-child(2) .box {
+  height: 4.133333rem;
+}
+.visit_page .container li:nth-child(3) .box {
+  height: 2.0rem;
+}
+.visit_page .container li:nth-child(1) .title {
+  bottom: 2.833333rem;
+}
+.visit_page .container li:nth-child(2) .title {
+  bottom: 4.133333rem;
+}
+.visit_page .container li:nth-child(3) .title {
+  bottom: 2.0rem;
+}
+.visit_page .bottom_tip {
+  margin: 1.666667rem auto 0;
+  padding-left: 1.3rem;
+}
+.visit_page .bottom_tip li {
+  float: left;
+  padding: 0.333333rem 0.666667rem;
+  border-right: 1px solid #edeef0;
+  width: 7.5rem;
+  min-width: 106px;
+  box-sizing: border-box;
+}
+.visit_page .bottom_tip li img {
+  height: 1.2rem;
+  transform: translate(0, 20%);
+}
+.visit_page .bottom_tip li .tip {
+  height: 1.6rem;
+  text-align: center;
+  line-height: 1.6rem;
+}
+.visit_page .bottom_tip li .content {
+  width: 5rem;
+  margin: 0 auto;
+}
+.visit_page .bottom_tip li:nth-child(3) {
+  border: 0 none;
+}
+.use_time {
+  height: 15.666667rem;
+  margin-top: 0.733333rem;
+  background: #fff;
+}
+.use_time #useTime {
+  height: 10.333333rem;
+}
+.use_device {
+  height: 16rem;
+  margin-top: 0.733333rem;
+  background: #fff;
+}
+.use_device #system {
+  height: 12.0rem;
+}
+.visit_statistics {
+  margin-top: 0.733333rem;
+}
+.visit_statistics .visit_chart {
+  height: 30.0rem;
+}
+.ColorBlue {
+  color: #0059aa;
+  font-weight: 700;
+}
+@media screen and (max-width: 340px) {
+  .layout .visit_page .bottom_tip {
+    padding: 0;
+    background: #fff;
+  }
+}
